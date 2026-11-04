@@ -1,0 +1,250 @@
+[
+  {
+    "@type": "mtTask",
+    "id": "@1",
+    "name": "MappingTaskcustomers_source_to_landing",
+    "autoExpireObject": false,
+    "runtimeEnvironmentId": "REDACTED_ENV_REFERENCE",
+    "maxLogs": 10,
+    "verbose": false,
+    "lastRunTime": 1793500289000,
+    "mappingId": "@REDACTED_REF_003",
+    "frsGuid": "REDACTED_ENV_REFERENCE",
+    "sessionPropertiesList": [
+      {
+        "name": "Pushdown Optimization",
+        "value": "None",
+        "recommended": false
+      },
+      {
+        "name": "Pushdown Optimization Context",
+        "value": "None",
+        "recommended": false
+      },
+      {
+        "name": "Pushdown Optimization Fallback Option",
+        "value": "Partial PDO",
+        "recommended": false
+      }
+    ],
+    "hidden": false,
+    "enableCrossSchemaPushdown": true,
+    "enableParallelRun": false,
+    "autoTunedApplied": false,
+    "autoTunedAppliedType": "NONE",
+    "paramFileType": "PARAM_FILE_LOCAL",
+    "schemaMode": "async",
+    "valid": true,
+    "schemaValidationErrorCount": -1,
+    "serverlessProperties": {},
+    "taskProperties": [
+      {
+        "@type": "taskProperty",
+        "name": "parameterFileDir",
+        "currentValue": "",
+        "type": "STRING",
+        "label": "label.parameterFileDir",
+        "required": false
+      },
+      {
+        "@type": "taskProperty",
+        "name": "parameterFileName",
+        "currentValue": "",
+        "type": "STRING",
+        "label": "label.parameterFileName",
+        "required": false
+      },
+      {
+        "@type": "taskProperty",
+        "name": "outboundMessageUrlQueueTime",
+        "currentValue": "",
+        "type": "NUMBER",
+        "label": "label.outboundMessageUrlQueueTime",
+        "required": false
+      },
+      {
+        "@type": "taskProperty",
+        "name": "outboundMessageUrlToken",
+        "currentValue": "",
+        "type": "STRING",
+        "label": "label.outboundMessageUrlToken",
+        "required": false
+      }
+    ],
+    "optimizationPlan": "NONE",
+    "isMidstreamPreview": false,
+    "allowMaxFieldLength": false,
+    "specialCharacterSupport": false,
+    "useUserDefinedOrder": false,
+    "parameters": [
+      {
+        "@type": "mtTaskParameter",
+        "id": 322326286,
+        "name": "$customers_source$",
+        "type": "EXTENDED_SOURCE",
+        "label": "customers_source",
+        "uiProperties": {
+          "connectionParameterized": "false",
+          "isSelectDistinct": "false",
+          "isMsrcFilterParameterized": "false",
+          "isMsrcSortParameterized": "false",
+          "objectParameterized": "false",
+          "visible": "false",
+          "originalPath": "customers_source"
+        },
+        "sourceConnectionId": "REDACTED_ENV_REFERENCE",
+        "newFlatFile": false,
+        "newObject": false,
+        "showBusinessNames": false,
+        "naturalOrder": true,
+        "truncateTarget": false,
+        "bulkApiDBTarget": false,
+        "srcFFAttrs": {
+          "@type": "flatFileAttrs",
+          "id": 41820368,
+          "delimiter": ",",
+          "textQualifier": "\"",
+          "escapeChar": "",
+          "headerLineNo": 1,
+          "firstDataRow": 2,
+          "rowDelimiter": 0,
+          "consecutiveDelimiter": false,
+          "multiDelimitersAsAnd": true,
+          "firstDataRowAsHeader": false,
+          "codePage": "",
+          "customRowDelimiter": "",
+          "headerAndDataDelimiter": 0
+        },
+        "customFuncCfg": {
+          "@type": "customFuncConfig",
+          "id": -1,
+          "connections": [],
+          "inputMap": [],
+          "outputFields": []
+        },
+        "targetRefsV2": {},
+        "targetUpdateColumns": [],
+        "fieldOrderList": [],
+        "extendedObject": {
+          "@type": "extendedObject",
+          "object": {
+            "@type": "mObject",
+            "name": "customers (2).csv",
+            "label": "customers (2).csv",
+            "metadataUpdated": false,
+            "dbSchema": "",
+            "relations": [],
+            "children": []
+          },
+          "singleMode": true,
+          "objects": [
+            {
+              "@type": "mObject",
+              "name": "customers (2).csv",
+              "label": "customers (2).csv",
+              "metadataUpdated": false,
+              "dbSchema": "",
+              "relations": [],
+              "children": []
+            }
+          ],
+          "filters": [],
+          "sortFields": []
+        },
+        "runtimeAttrs": {},
+        "isRESTModernSource": true,
+        "commandType": 0,
+        "isFileList": false,
+        "handleSpecialChars": false,
+        "handleDecimalRoundOff": false,
+        "frsAsset": false,
+        "dynamicFileName": false,
+        "excludeDynamicFileNameField": false,
+        "currentlyProcessedFileName": false,
+        "retainFieldMetadata": false,
+        "useExactSrcNames": false,
+        "userUpdated": true,
+        "fetchMode": "ORIGINAL",
+        "tgtObjectAttributes": {},
+        "runtimeParameterData": {
+          "@type": "mtTaskRuntimeParameterData",
+          "isConnectionRuntimeParameter": false,
+          "isObjectRuntimeParameter": false
+        },
+        "overridableProperties": [],
+        "overriddenFields": []
+      },
+      {
+        "@type": "mtTaskParameter",
+        "id": 322326287,
+        "name": "$customers_landing_layer$",
+        "type": "TARGET",
+        "label": "customers_landing_layer",
+        "uiProperties": {
+          "connectionParameterized": "false",
+          "objectParameterized": "false",
+          "visible": "false",
+          "flags": "SUPPORTS_MULTI_SCHEMA",
+          "defaultTargetUpdateColumns": "",
+          "supportApplyDDLChanges": "false",
+          "originalPath": "customers_landing_layer"
+        },
+        "targetConnectionId": "REDACTED_ENV_REFERENCE",
+        "targetObject": "Customer",
+        "targetObjectLabel": "Customer",
+        "newFlatFile": false,
+        "newObject": false,
+        "showBusinessNames": false,
+        "naturalOrder": true,
+        "truncateTarget": true,
+        "bulkApiDBTarget": false,
+        "operationType": "Insert",
+        "customFuncCfg": {
+          "@type": "customFuncConfig",
+          "id": -1,
+          "connections": [],
+          "inputMap": [],
+          "outputFields": []
+        },
+        "targetRefsV2": {},
+        "targetUpdateColumns": [],
+        "fieldOrderList": [],
+        "extendedObject": {
+          "@type": "extendedObject",
+          "singleMode": true,
+          "filters": [],
+          "sortFields": []
+        },
+        "runtimeAttrs": {},
+        "isRESTModernSource": true,
+        "commandType": 0,
+        "isFileList": false,
+        "handleSpecialChars": false,
+        "handleDecimalRoundOff": false,
+        "frsAsset": false,
+        "dynamicFileName": false,
+        "excludeDynamicFileNameField": false,
+        "currentlyProcessedFileName": false,
+        "retainFieldMetadata": false,
+        "objectName": "Customer",
+        "objectLabel": "Customer",
+        "useExactSrcNames": false,
+        "userUpdated": true,
+        "fetchMode": "ORIGINAL",
+        "tgtObjectAttributes": {},
+        "runtimeParameterData": {
+          "@type": "mtTaskRuntimeParameterData",
+          "isConnectionRuntimeParameter": false,
+          "isObjectRuntimeParameter": false
+        },
+        "overridableProperties": [],
+        "targetSchemaProviderType": "SELECTED_OBJECT",
+        "dbSchema": "",
+        "overriddenFields": []
+      }
+    ],
+    "sequences": [],
+    "inOutParameters": [],
+    "connRuntimeAttrs": []
+  }
+]

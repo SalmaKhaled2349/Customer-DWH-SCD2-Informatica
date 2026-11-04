@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:getResponse xmlns:ns0="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd" xmlns:ns1="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd" xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd" xmlns:ns3="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+  <ns0:Item>
+    <ns0:EntryId>A8NpET1cnFKi9zh-gt-27662473-2026-10-21T12:47:44.435Z::tf.xml</ns0:EntryId>
+    <ns0:Name>Taskflow2</ns0:Name>
+    <ns0:MimeType>application/xml+taskflow</ns0:MimeType>
+    <ns0:Description />
+    <ns0:AppliesTo />
+    <ns0:Tags />
+    <ns0:VersionLabel>1.0</ns0:VersionLabel>
+    <ns0:State>CURRENT</ns0:State>
+    <ns0:ProcessGroup />
+    <ns0:CreatedBy>REDACTED_AUTHOR</ns0:CreatedBy>
+    <ns0:CreationDate>2026-10-21T12:47:44Z</ns0:CreationDate>
+    <ns0:ModifiedBy>REDACTED_AUTHOR</ns0:ModifiedBy>
+    <ns0:ModificationDate>2026-11-01T02:21:10Z</ns0:ModificationDate>
+    <ns0:PublicationStatus>published</ns0:PublicationStatus>
+    <ns0:PublishedBy>REDACTED_EMAIL</ns0:PublishedBy>
+    <ns0:PublicationDate>2026-11-01T02:21:14Z</ns0:PublicationDate>
+    <ns0:PublishedContributionId>project:/tf.Taskflow2/Taskflow2.tf.xml</ns0:PublishedContributionId>
+    <ns0:Entry>
+      <ns1:taskflow GUID="3TjwBT4q1EGiG5detkykW5" assetLocation="Default" displayName="Taskflow2" name="Taskflow2" overrideAPIName="false">
+        <ns2:parameterSet />
+        <ns1:appliesTo />
+        <ns1:description />
+        <ns1:tags />
+        <ns1:generator>Informatica Process Designer 11</ns1:generator>
+        <ns1:tempFields>
+          <ns1:field description="" name="land" type="reference">
+            <ns1:options>
+              <ns1:option name="failOnNotRun">false</ns1:option>
+              <ns1:option name="failOnFault">false</ns1:option>
+              <ns1:option name="referenceTo">$po:MappingTaskcustomers-source-to-landing-cHUvnMT618aiyEzrZBpxe7</ns1:option>
+            </ns1:options>
+          </ns1:field>
+          <ns1:field description="" name="staging" type="reference">
+            <ns1:options>
+              <ns1:option name="failOnNotRun">false</ns1:option>
+              <ns1:option name="failOnFault">false</ns1:option>
+              <ns1:option name="referenceTo">$po:MappingTaskcustomers-landing-to-staging-5rUcwtpjU0cdZebYqGkBAR</ns1:option>
+            </ns1:options>
+          </ns1:field>
+          <ns1:field description="" name="customers_dim" type="reference">
+            <ns1:options>
+              <ns1:option name="failOnNotRun">false</ns1:option>
+              <ns1:option name="failOnFault">false</ns1:option>
+              <ns1:option name="referenceTo">$po:MappingTaskcustomers-staging-to-customersdim-iKZ3h348nChbcxXouVXAck</ns1:option>
+            </ns1:options>
+          </ns1:field>
+        </ns1:tempFields>
+        <ns1:notes />
+        <ns1:deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+          <ns1:rest />
+        </ns1:deployment>
+        <ns1:flow id="a">
+          <ns1:start id="b">
+            <ns1:link id="mvi3vui8" targetId="mvi3vuj1" />
+          </ns1:start>
+          <ns1:eventContainer id="mvi3vuj1">
+            <ns1:service id="mvi3vui7">
+              <ns1:title>land</ns1:title>
+              <ns1:serviceName>ICSExecuteDataTask</ns1:serviceName>
+              <ns1:serviceGUID />
+              <ns1:serviceInput>
+                <ns1:parameter name="Wait for Task to Complete" source="constant" updatable="true">true</ns1:parameter>
+                <ns1:parameter name="Max Wait" source="constant" updatable="true">604800</ns1:parameter>
+                <ns1:parameter name="Task Name" source="constant" updatable="true">MappingTaskcustomers_source_to_landing</ns1:parameter>
+                <ns1:parameter name="GUID" source="constant" updatable="true">cHUvnMT618aiyEzrZBpxe7</ns1:parameter>
+                <ns1:parameter name="Task Type" source="constant" updatable="true">MCT</ns1:parameter>
+                <ns1:parameter name="Has Inout Parameters" source="constant" updatable="true">false</ns1:parameter>
+                <ns1:parameter name="taskField" source="nested">
+                  <ns1:operation source="field" to="MappingTaskcustomers-source-to-landing-cHUvnMT618aiyEzrZBpxe7">temp.land</ns1:operation>
+                </ns1:parameter>
+              </ns1:serviceInput>
+              <ns1:serviceOutput>
+                <ns1:operation source="field" to="temp.land/output/Object_Name">Object Name</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Run_Id">Run Id</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Log_Id">Log Id</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Task_Id">Task Id</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Task_Status">Task Status</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Success_Source_Rows">Success Source Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Failed_Source_Rows">Failed Source Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Success_Target_Rows">Success Target Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Failed_Target_Rows">Failed Target Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Start_Time">Start Time</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/End_Time">End Time</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/Error_Message">Error Message</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/TotalTransErrors">Total Transformation Errors</ns1:operation>
+                <ns1:operation source="field" to="temp.land/output/FirstErrorCode">First Error Code</ns1:operation>
+              </ns1:serviceOutput>
+            </ns1:service>
+            <ns1:link id="mvi3vuie" targetId="mvi3vuk4" />
+            <ns1:events>
+              <ns1:catch faultField="temp.land/fault" id="mvi3vuiz" interrupting="true" name="error">
+                <ns1:suspend />
+              </ns1:catch>
+              <ns1:catch faultField="temp.land/fault" id="mvi3vuj0" interrupting="true" name="warning" />
+            </ns1:events>
+          </ns1:eventContainer>
+          <ns1:eventContainer id="mvi3vuk4">
+            <ns1:service id="mvi3vuid">
+              <ns1:title>staging</ns1:title>
+              <ns1:serviceName>ICSExecuteDataTask</ns1:serviceName>
+              <ns1:serviceGUID />
+              <ns1:serviceInput>
+                <ns1:parameter name="Wait for Task to Complete" source="constant" updatable="true">true</ns1:parameter>
+                <ns1:parameter name="Max Wait" source="constant" updatable="true">604800</ns1:parameter>
+                <ns1:parameter name="Task Name" source="constant" updatable="true">MappingTaskcustomers_landing_to_staging</ns1:parameter>
+                <ns1:parameter name="GUID" source="constant" updatable="true">5rUcwtpjU0cdZebYqGkBAR</ns1:parameter>
+                <ns1:parameter name="Task Type" source="constant" updatable="true">MCT</ns1:parameter>
+                <ns1:parameter name="Has Inout Parameters" source="constant" updatable="true">false</ns1:parameter>
+                <ns1:parameter name="taskField" source="nested">
+                  <ns1:operation source="field" to="MappingTaskcustomers-landing-to-staging-5rUcwtpjU0cdZebYqGkBAR">temp.staging</ns1:operation>
+                </ns1:parameter>
+              </ns1:serviceInput>
+              <ns1:serviceOutput>
+                <ns1:operation source="field" to="temp.staging/output/Object_Name">Object Name</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Run_Id">Run Id</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Log_Id">Log Id</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Task_Id">Task Id</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Task_Status">Task Status</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Success_Source_Rows">Success Source Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Failed_Source_Rows">Failed Source Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Success_Target_Rows">Success Target Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Failed_Target_Rows">Failed Target Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Start_Time">Start Time</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/End_Time">End Time</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/Error_Message">Error Message</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/TotalTransErrors">Total Transformation Errors</ns1:operation>
+                <ns1:operation source="field" to="temp.staging/output/FirstErrorCode">First Error Code</ns1:operation>
+              </ns1:serviceOutput>
+            </ns1:service>
+            <ns1:link id="mvx6vkw9" targetId="mvx6vkwe" />
+            <ns1:events>
+              <ns1:catch faultField="temp.staging/fault" id="mvi3vuk2" interrupting="true" name="error">
+                <ns1:suspend />
+              </ns1:catch>
+              <ns1:catch faultField="temp.staging/fault" id="mvi3vuk3" interrupting="true" name="warning" />
+            </ns1:events>
+          </ns1:eventContainer>
+          <ns1:eventContainer id="mvx6vkwe">
+            <ns1:service id="mvx6vkw8">
+              <ns1:title>customers_dim</ns1:title>
+              <ns1:serviceName>ICSExecuteDataTask</ns1:serviceName>
+              <ns1:serviceGUID />
+              <ns1:serviceInput>
+                <ns1:parameter name="Wait for Task to Complete" source="constant" updatable="true">true</ns1:parameter>
+                <ns1:parameter name="Max Wait" source="constant" updatable="true">604800</ns1:parameter>
+                <ns1:parameter name="Task Name" source="constant" updatable="true">MappingTaskcustomers_staging_to_customersdim</ns1:parameter>
+                <ns1:parameter name="GUID" source="constant" updatable="true">iKZ3h348nChbcxXouVXAck</ns1:parameter>
+                <ns1:parameter name="Task Type" source="constant" updatable="true">MCT</ns1:parameter>
+                <ns1:parameter name="Has Inout Parameters" source="constant" updatable="true">false</ns1:parameter>
+                <ns1:parameter name="taskField" source="nested">
+                  <ns1:operation source="field" to="MappingTaskcustomers-staging-to-customersdim-iKZ3h348nChbcxXouVXAck">temp.customers_dim</ns1:operation>
+                </ns1:parameter>
+              </ns1:serviceInput>
+              <ns1:serviceOutput>
+                <ns1:operation source="field" to="temp.customers_dim/output/Object_Name">Object Name</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Run_Id">Run Id</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Log_Id">Log Id</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Task_Id">Task Id</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Task_Status">Task Status</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Success_Source_Rows">Success Source Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Failed_Source_Rows">Failed Source Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Success_Target_Rows">Success Target Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Failed_Target_Rows">Failed Target Rows</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Start_Time">Start Time</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/End_Time">End Time</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/Error_Message">Error Message</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/TotalTransErrors">Total Transformation Errors</ns1:operation>
+                <ns1:operation source="field" to="temp.customers_dim/output/FirstErrorCode">First Error Code</ns1:operation>
+              </ns1:serviceOutput>
+            </ns1:service>
+            <ns1:link id="mvx6vkwa" targetId="c" />
+            <ns1:events>
+              <ns1:catch faultField="temp.customers_dim/fault" id="mvx6vkwc" interrupting="true" name="error">
+                <ns1:suspend />
+              </ns1:catch>
+              <ns1:catch faultField="temp.customers_dim/fault" id="mvx6vkwd" interrupting="true" name="warning" />
+            </ns1:events>
+          </ns1:eventContainer>
+          <ns1:end id="c" />
+        </ns1:flow>
+        <ns1:dependencies>
+          <ns3:processObject displayName="MappingTaskcustomers-source-to-landing-cHUvnMT618aiyEzrZBpxe7" isByCopy="true" name="MappingTaskcustomers-source-to-landing-cHUvnMT618aiyEzrZBpxe7">
+            <ns3:description />
+            <ns3:tags />
+            <ns3:detail>
+              <ns3:field label="TaskProperties Parameters" name="taskProperties" nullable="true" required="false" type="reference" />
+              <ns3:field label="Output Parameters" name="output" nullable="true" required="false" type="reference" />
+              <ns3:field label="Fault" name="fault" nullable="true" required="false" type="reference" />
+              <ns3:field label="Max Wait (Seconds)" name="Max_Wait" nullable="true" required="false" type="int" />
+            </ns3:detail>
+          </ns3:processObject>
+          <ns3:processObject displayName="MappingTaskcustomers-landing-to-staging-5rUcwtpjU0cdZebYqGkBAR" isByCopy="true" name="MappingTaskcustomers-landing-to-staging-5rUcwtpjU0cdZebYqGkBAR">
+            <ns3:description />
+            <ns3:tags />
+            <ns3:detail>
+              <ns3:field label="TaskProperties Parameters" name="taskProperties" nullable="true" required="false" type="reference" />
+              <ns3:field label="Output Parameters" name="output" nullable="true" required="false" type="reference" />
+              <ns3:field label="Fault" name="fault" nullable="true" required="false" type="reference" />
+              <ns3:field label="Max Wait (Seconds)" name="Max_Wait" nullable="true" required="false" type="int" />
+            </ns3:detail>
+          </ns3:processObject>
+          <ns3:processObject displayName="MappingTaskcustomers-staging-to-customersdim-iKZ3h348nChbcxXouVXAck" isByCopy="true" name="MappingTaskcustomers-staging-to-customersdim-iKZ3h348nChbcxXouVXAck">
+            <ns3:description />
+            <ns3:tags />
+            <ns3:detail>
+              <ns3:field label="TaskProperties Parameters" name="taskProperties" nullable="true" required="false" type="reference" />
+              <ns3:field label="Output Parameters" name="output" nullable="true" required="false" type="reference" />
+              <ns3:field label="Fault" name="fault" nullable="true" required="false" type="reference" />
+              <ns3:field label="Max Wait (Seconds)" name="Max_Wait" nullable="true" required="false" type="int" />
+            </ns3:detail>
+          </ns3:processObject>
+        </ns1:dependencies>
+      </ns1:taskflow>
+    </ns0:Entry>
+    <ns0:GUID>3TjwBT4q1EGiG5detkykW5</ns0:GUID>
+    <ns0:DisplayName>Taskflow2</ns0:DisplayName>
+  </ns0:Item>
+  <ns0:CurrentServerDateTime>2026-11-04T12:04:06.481Z</ns0:CurrentServerDateTime>
+</ns0:getResponse>

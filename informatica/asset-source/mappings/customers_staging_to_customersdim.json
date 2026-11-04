@@ -1,0 +1,3530 @@
+{
+  "$$IID": "stringIdentity:@3",
+  "$$class": 1,
+  "annotations": [
+    {
+      "$$ID": 1,
+      "$$class": 2,
+      "jsonBlob": "{\"customers_staging_layer\":{\"x\":50,\"y\":100},\"Lookup\":{\"x\":301.9943374790179,\"y\":100.9985977883769},\"Expression\":{\"x\":489.9942028985507,\"y\":100.99859778837688},\"Router\":{\"x\":676.9942028985507,\"y\":100},\"Update_dim_customers\":{\"x\":951.5132360615518,\"y\":199.92858122008386},\"Insert_dim_customers\":{\"x\":950.8238310712696,\"y\":44.01596084404875}}",
+      "templateId": ""
+    },
+    {
+      "$$ID": 2,
+      "$$class": 3,
+      "source": "TEMPLATE_SETTINGS",
+      "nameValuePairs": [
+        {
+          "$$ID": 23,
+          "$$class": 12,
+          "name": "UNIQUIFY_MAPPLET_TX_NAMES_OPTIONS",
+          "value": {
+            "$$class": 24,
+            "valueLiteral": "{\"nonNativeMappletTx\":true}"
+          }
+        },
+        {
+          "$$ID": 24,
+          "$$class": 12,
+          "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+          "value": {
+            "$$class": 25,
+            "value": "true"
+          }
+        }
+      ]
+    },
+    {
+      "$$ID": 3,
+      "$$class": 4,
+      "body": ""
+    }
+  ],
+  "allowMaxFieldLength": "false",
+  "bigIntConvertType": "ONLY_BIGINT",
+  "documentType": "MAPPING",
+  "ecoSystem": "",
+  "name": "customers_staging_to_customersdim",
+  "specialCharacterSupport": "false",
+  "templateOrigin": "",
+  "links": [
+    {
+      "$$ID": 4,
+      "$$class": 5,
+      "name": "customers_staging_layer.[object Object]",
+      "fromGroup": {
+        "##ID": 5,
+        "$$class": 6
+      },
+      "fromTransformation": {
+        "##ID": 6,
+        "$$class": 7
+      },
+      "toGroup": {
+        "##ID": 7,
+        "$$class": 6
+      },
+      "toTransformation": {
+        "##ID": 8,
+        "$$class": 8
+      }
+    },
+    {
+      "$$ID": 9,
+      "$$class": 5,
+      "name": "Lookup.[object Object]",
+      "fromGroup": {
+        "##ID": 7,
+        "$$class": 6
+      },
+      "fromTransformation": {
+        "##ID": 8,
+        "$$class": 8
+      },
+      "toGroup": {
+        "##ID": 10,
+        "$$class": 6
+      },
+      "toTransformation": {
+        "##ID": 11,
+        "$$class": 9
+      }
+    },
+    {
+      "$$ID": 12,
+      "$$class": 5,
+      "name": "Expression.[object Object]",
+      "fromGroup": {
+        "##ID": 10,
+        "$$class": 6
+      },
+      "fromTransformation": {
+        "##ID": 11,
+        "$$class": 9
+      },
+      "toGroup": {
+        "##ID": 13,
+        "$$class": 6
+      },
+      "toTransformation": {
+        "##ID": 14,
+        "$$class": 10
+      }
+    },
+    {
+      "$$ID": 15,
+      "$$class": 5,
+      "name": "Router.Edge",
+      "fromGroup": {
+        "##ID": 16,
+        "$$class": 6
+      },
+      "fromTransformation": {
+        "##ID": 14,
+        "$$class": 10
+      },
+      "toGroup": {
+        "##ID": 17,
+        "$$class": 6
+      },
+      "toTransformation": {
+        "##ID": 18,
+        "$$class": 11
+      }
+    },
+    {
+      "$$ID": 19,
+      "$$class": 5,
+      "name": "Router.Edge",
+      "fromGroup": {
+        "##ID": 20,
+        "$$class": 6
+      },
+      "fromTransformation": {
+        "##ID": 14,
+        "$$class": 10
+      },
+      "toGroup": {
+        "##ID": 21,
+        "$$class": 6
+      },
+      "toTransformation": {
+        "##ID": 22,
+        "$$class": 11
+      }
+    }
+  ],
+  "transformations": [
+    {
+      "$$ID": 6,
+      "$$class": 7,
+      "augmented": "false",
+      "createTime": "2026-11-01T01:10:53.196Z",
+      "name": "customers_staging_layer",
+      "advancedProperties": [
+        {
+          "$$ID": 25,
+          "$$class": 13,
+          "name": "Tracing Level",
+          "value": "Normal"
+        },
+        {
+          "$$ID": 26,
+          "$$class": 13,
+          "name": "Pre SQL",
+          "value": ""
+        },
+        {
+          "$$ID": 27,
+          "$$class": 13,
+          "name": "Post SQL",
+          "value": ""
+        },
+        {
+          "$$ID": 28,
+          "$$class": 13,
+          "name": "Sql Override",
+          "value": ""
+        },
+        {
+          "$$ID": 29,
+          "$$class": 13,
+          "name": "Output is deterministic",
+          "value": "false"
+        },
+        {
+          "$$ID": 30,
+          "$$class": 13,
+          "name": "Output is repeatable",
+          "value": ""
+        }
+      ],
+      "groups": [
+        {
+          "$$ID": 5,
+          "$$class": 6,
+          "input": "false",
+          "name": "DefaultGroup",
+          "output": "true"
+        }
+      ],
+      "sessionProperties": [
+        {
+          "$$ID": 31,
+          "$$class": 14,
+          "name": "Schema Name",
+          "value": ""
+        },
+        {
+          "$$ID": 32,
+          "$$class": 14,
+          "name": "Table Name",
+          "value": ""
+        }
+      ],
+      "generateFilenamePort": "false",
+      "useLabels": "false",
+      "useSequenceFields": "false",
+      "fields": [
+        {
+          "$$ID": 34,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 35,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Stage_SK",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+            "$$class": 18
+          },
+          "precision": 19,
+          "scale": 0
+        },
+        {
+          "$$ID": 36,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 37,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_ID",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        },
+        {
+          "$$ID": 38,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 39,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_Name",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 100,
+          "scale": 0
+        },
+        {
+          "$$ID": 40,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 41,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "City",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 100,
+          "scale": 0
+        },
+        {
+          "$$ID": 42,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 43,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Country",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 100,
+          "scale": 0
+        },
+        {
+          "$$ID": 44,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 45,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_Status",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 20,
+          "scale": 0
+        },
+        {
+          "$$ID": 46,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 47,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Hash_Key",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 32,
+          "scale": 0
+        },
+        {
+          "$$ID": 48,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 49,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Start_Date",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+            "$$class": 18
+          },
+          "precision": 29,
+          "scale": 9
+        },
+        {
+          "$$ID": 50,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 51,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "End_Date",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+            "$$class": 18
+          },
+          "precision": 29,
+          "scale": 9
+        },
+        {
+          "$$ID": 52,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 53,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Is_Current",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        },
+        {
+          "$$ID": 54,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 55,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Is_Deleted",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        }
+      ],
+      "dataAdapter": {
+        "$$ID": 33,
+        "$$class": 15,
+        "name": "",
+        "codePage": "",
+        "compatibleEngine": "",
+        "connectionId": "REDACTED_ENV_REFERENCE",
+        "connectionSelectionType": "",
+        "excludeDynamicFileNameField": "false",
+        "fwConfigId": "",
+        "multipleObject": "false",
+        "objectType": "SINGLE",
+        "typeSystem": "SqlServer",
+        "useDynamicFileName": "false",
+        "object": {
+          "$$ID": 148,
+          "$$class": 26,
+          "name": "Customers",
+          "customQuery": "",
+          "dbSchema": "",
+          "label": "Customers",
+          "objectName": "Customers",
+          "objectType": "",
+          "parentPath": "",
+          "path": "Customers",
+          "retainMetadata": "false",
+          "fields": [
+            {
+              "$$ID": 35,
+              "$$class": 17,
+              "name": "Stage_SK",
+              "annotations": [
+                {
+                  "$$ID": 192,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "true",
+              "label": "Stage_SK",
+              "nativeName": "Stage_SK",
+              "nativeType": "bigint",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 19,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "true",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 193,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 194,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 195,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 37,
+              "$$class": 17,
+              "name": "Customer_ID",
+              "annotations": [
+                {
+                  "$$ID": 196,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Customer_ID",
+              "nativeName": "Customer_ID",
+              "nativeType": "varchar",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 197,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 198,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 199,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 39,
+              "$$class": 17,
+              "name": "Customer_Name",
+              "annotations": [
+                {
+                  "$$ID": 200,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Customer_Name",
+              "nativeName": "Customer_Name",
+              "nativeType": "nvarchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 100,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 201,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 202,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 203,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 41,
+              "$$class": 17,
+              "name": "City",
+              "annotations": [
+                {
+                  "$$ID": 204,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "City",
+              "nativeName": "City",
+              "nativeType": "nvarchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 100,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 205,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 206,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 207,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 43,
+              "$$class": 17,
+              "name": "Country",
+              "annotations": [
+                {
+                  "$$ID": 208,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Country",
+              "nativeName": "Country",
+              "nativeType": "nvarchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 100,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 209,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 210,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 211,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 45,
+              "$$class": 17,
+              "name": "Customer_Status",
+              "annotations": [
+                {
+                  "$$ID": 212,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Customer_Status",
+              "nativeName": "Customer_Status",
+              "nativeType": "varchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 20,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 213,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 214,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 215,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 47,
+              "$$class": 17,
+              "name": "Hash_Key",
+              "annotations": [
+                {
+                  "$$ID": 216,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Hash_Key",
+              "nativeName": "Hash_Key",
+              "nativeType": "char",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 32,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 217,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 218,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 219,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 49,
+              "$$class": 17,
+              "name": "Start_Date",
+              "annotations": [
+                {
+                  "$$ID": 220,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Start_Date",
+              "nativeName": "Start_Date",
+              "nativeType": "timestamp",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 23,
+              "scale": 3,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 221,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 222,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 223,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 51,
+              "$$class": 17,
+              "name": "End_Date",
+              "annotations": [
+                {
+                  "$$ID": 224,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "End_Date",
+              "nativeName": "End_Date",
+              "nativeType": "timestamp",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 23,
+              "scale": 3,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 225,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 226,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 227,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 53,
+              "$$class": 17,
+              "name": "Is_Current",
+              "annotations": [
+                {
+                  "$$ID": 228,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Is_Current",
+              "nativeName": "Is_Current",
+              "nativeType": "integer",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 229,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 230,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 231,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 55,
+              "$$class": 17,
+              "name": "Is_Deleted",
+              "annotations": [
+                {
+                  "$$ID": 232,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Is_Deleted",
+              "nativeName": "Is_Deleted",
+              "nativeType": "integer",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 233,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 234,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Customers"
+                },
+                {
+                  "$$ID": 235,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        },
+        "oprRuntimeAttributes": {
+          "$$ID": 149,
+          "$$class": 27
+        },
+        "readOptions": {
+          "$$ID": 150,
+          "$$class": 28,
+          "commandType": 0,
+          "descending": "false",
+          "filterCondition": "",
+          "flatFileCommand": "",
+          "queryAll": "false",
+          "rowLimit": 0,
+          "selectDistinct": "false",
+          "userDefinedJoin": "",
+          "advancedFilterCondition": "",
+          "requestXml": "",
+          "sortFieldValues": ""
+        },
+        "runtimeAttributes": {
+          "$$ID": 151,
+          "$$class": 27
+        }
+      }
+    },
+    {
+      "$$ID": 18,
+      "$$class": 11,
+      "augmented": "false",
+      "createTime": "2026-11-01T01:10:53.196Z",
+      "name": "Insert_dim_customers",
+      "advancedProperties": [
+        {
+          "$$ID": 56,
+          "$$class": 13,
+          "name": "Forward Rejected Rows",
+          "value": "true"
+        },
+        {
+          "$$ID": 57,
+          "$$class": 13,
+          "name": "Pre SQL",
+          "value": ""
+        },
+        {
+          "$$ID": 58,
+          "$$class": 13,
+          "name": "Post SQL",
+          "value": ""
+        },
+        {
+          "$$ID": 59,
+          "$$class": 13,
+          "name": "Update Override",
+          "value": ""
+        },
+        {
+          "$$ID": 60,
+          "$$class": 13,
+          "name": "Additional Properties",
+          "value": ""
+        }
+      ],
+      "groups": [
+        {
+          "$$ID": 17,
+          "$$class": 6,
+          "input": "true",
+          "name": "DefaultGroup",
+          "output": "false",
+          "rules": [
+            {
+              "$$ID": 152,
+              "$$class": 29,
+              "bulkRename": "false",
+              "include": "true"
+            }
+          ]
+        }
+      ],
+      "sessionProperties": [
+        {
+          "$$ID": 61,
+          "$$class": 14,
+          "name": "Reject file directory",
+          "value": ""
+        },
+        {
+          "$$ID": 62,
+          "$$class": 14,
+          "name": "Reject filename",
+          "value": ""
+        },
+        {
+          "$$ID": 63,
+          "$$class": 14,
+          "name": "Schema Name",
+          "value": ""
+        },
+        {
+          "$$ID": 64,
+          "$$class": 14,
+          "name": "Table Name",
+          "value": ""
+        }
+      ],
+      "createTarget": "false",
+      "fieldMappingMode": "MANUAL",
+      "inputSorted": "false",
+      "schemaProviderType": "SELECTED_OBJECT",
+      "targetFieldsOrdered": "false",
+      "updateColumns": [],
+      "useLabels": "false",
+      "useSequenceFields": "false",
+      "fields": [
+        {
+          "$$ID": 66,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 67,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_SK",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+            "$$class": 18
+          },
+          "precision": 19,
+          "scale": 0
+        },
+        {
+          "$$ID": 68,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 69,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Stage_SK",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+            "$$class": 18
+          },
+          "precision": 19,
+          "scale": 0
+        },
+        {
+          "$$ID": 70,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 71,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_ID",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        },
+        {
+          "$$ID": 72,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 73,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_Name",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 100,
+          "scale": 0
+        },
+        {
+          "$$ID": 74,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 75,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "City",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 100,
+          "scale": 0
+        },
+        {
+          "$$ID": 76,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 77,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Country",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 100,
+          "scale": 0
+        },
+        {
+          "$$ID": 78,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 79,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_Status",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 20,
+          "scale": 0
+        },
+        {
+          "$$ID": 80,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 81,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Hash_Key",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 32,
+          "scale": 0
+        },
+        {
+          "$$ID": 82,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 83,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Start_Date",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+            "$$class": 18
+          },
+          "precision": 29,
+          "scale": 9
+        },
+        {
+          "$$ID": 84,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 85,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "End_Date",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+            "$$class": 18
+          },
+          "precision": 29,
+          "scale": 9
+        },
+        {
+          "$$ID": 86,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 87,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Is_Current",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        },
+        {
+          "$$ID": 88,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 89,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Is_Deleted",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        }
+      ],
+      "dataAdapter": {
+        "$$ID": 65,
+        "$$class": 15,
+        "name": "",
+        "codePage": "",
+        "compatibleEngine": "",
+        "connectionId": "REDACTED_ENV_REFERENCE",
+        "connectionSelectionType": "",
+        "excludeDynamicFileNameField": "false",
+        "fwConfigId": "",
+        "multipleObject": "false",
+        "objectType": "SINGLE",
+        "typeSystem": "SqlServer",
+        "useDynamicFileName": "false",
+        "object": {
+          "$$ID": 153,
+          "$$class": 26,
+          "name": "Dim_Customers",
+          "customQuery": "",
+          "dbSchema": "",
+          "label": "Dim_Customers",
+          "objectName": "Dim_Customers",
+          "objectType": "",
+          "parentPath": "",
+          "path": "Dim_Customers",
+          "retainMetadata": "false",
+          "fields": [
+            {
+              "$$ID": 67,
+              "$$class": 17,
+              "name": "Customer_SK",
+              "annotations": [
+                {
+                  "$$ID": 236,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "true",
+              "label": "Customer_SK",
+              "nativeName": "Customer_SK",
+              "nativeType": "bigint",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 19,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "true",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 237,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 238,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 239,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 69,
+              "$$class": 17,
+              "name": "Stage_SK",
+              "annotations": [
+                {
+                  "$$ID": 240,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Stage_SK",
+              "nativeName": "Stage_SK",
+              "nativeType": "bigint",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 19,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "true",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 241,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 242,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 243,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 71,
+              "$$class": 17,
+              "name": "Customer_ID",
+              "annotations": [
+                {
+                  "$$ID": 244,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Customer_ID",
+              "nativeName": "Customer_ID",
+              "nativeType": "varchar",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 245,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 246,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 247,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 73,
+              "$$class": 17,
+              "name": "Customer_Name",
+              "annotations": [
+                {
+                  "$$ID": 248,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Customer_Name",
+              "nativeName": "Customer_Name",
+              "nativeType": "nvarchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 100,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 249,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 250,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 251,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 75,
+              "$$class": 17,
+              "name": "City",
+              "annotations": [
+                {
+                  "$$ID": 252,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "City",
+              "nativeName": "City",
+              "nativeType": "nvarchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 100,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 253,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 254,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 255,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 77,
+              "$$class": 17,
+              "name": "Country",
+              "annotations": [
+                {
+                  "$$ID": 256,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Country",
+              "nativeName": "Country",
+              "nativeType": "nvarchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 100,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 257,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 258,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 259,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 79,
+              "$$class": 17,
+              "name": "Customer_Status",
+              "annotations": [
+                {
+                  "$$ID": 260,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Customer_Status",
+              "nativeName": "Customer_Status",
+              "nativeType": "varchar",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 20,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 261,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 262,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 263,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 81,
+              "$$class": 17,
+              "name": "Hash_Key",
+              "annotations": [
+                {
+                  "$$ID": 264,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Hash_Key",
+              "nativeName": "Hash_Key",
+              "nativeType": "char",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 32,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 265,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 266,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 267,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 83,
+              "$$class": 17,
+              "name": "Start_Date",
+              "annotations": [
+                {
+                  "$$ID": 268,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Start_Date",
+              "nativeName": "Start_Date",
+              "nativeType": "timestamp",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 23,
+              "scale": 3,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 269,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 270,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 271,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 85,
+              "$$class": 17,
+              "name": "End_Date",
+              "annotations": [
+                {
+                  "$$ID": 272,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "End_Date",
+              "nativeName": "End_Date",
+              "nativeType": "timestamp",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 23,
+              "scale": 3,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 273,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 274,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 275,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 87,
+              "$$class": 17,
+              "name": "Is_Current",
+              "annotations": [
+                {
+                  "$$ID": 276,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Is_Current",
+              "nativeName": "Is_Current",
+              "nativeType": "integer",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 277,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 278,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 279,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 89,
+              "$$class": 17,
+              "name": "Is_Deleted",
+              "annotations": [
+                {
+                  "$$ID": 280,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Is_Deleted",
+              "nativeName": "Is_Deleted",
+              "nativeType": "integer",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 281,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 282,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 283,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        },
+        "oprRuntimeAttributes": {
+          "$$ID": 154,
+          "$$class": 27
+        },
+        "runtimeAttributes": {
+          "$$ID": 155,
+          "$$class": 27
+        },
+        "writeOptions": {
+          "$$ID": 156,
+          "$$class": 30,
+          "batchSize": 0,
+          "bulkApi": "false",
+          "errorFileDirectory": "",
+          "errorFilePrefix": "",
+          "handleDecimalRoundOff": "false",
+          "handleSpecialChars": "false",
+          "operations": [
+            "Insert"
+          ],
+          "setFieldsToNull": "false",
+          "successFileDirectory": "",
+          "successFilePrefix": "",
+          "truncate": "false",
+          "updateStrategyExpression": "",
+          "useErrorFile": "false",
+          "useExactSrcNames": "false",
+          "useSuccessFile": "false"
+        }
+      },
+      "manualMappings": {
+        "$$ID": 90,
+        "$$class": 19,
+        "mappingList": [
+          {
+            "$$ID": 157,
+            "$$class": 31,
+            "fromFieldName": "stg_Stage_SK",
+            "toField": {
+              "##ID": 68,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 158,
+            "$$class": 31,
+            "fromFieldName": "stg_Customer_ID",
+            "toField": {
+              "##ID": 70,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 159,
+            "$$class": 31,
+            "fromFieldName": "stg_Customer_Name",
+            "toField": {
+              "##ID": 72,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 160,
+            "$$class": 31,
+            "fromFieldName": "stg_City",
+            "toField": {
+              "##ID": 74,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 161,
+            "$$class": 31,
+            "fromFieldName": "stg_Country",
+            "toField": {
+              "##ID": 76,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 162,
+            "$$class": 31,
+            "fromFieldName": "stg_Customer_Status",
+            "toField": {
+              "##ID": 78,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 163,
+            "$$class": 31,
+            "fromFieldName": "stg_Hash_Key",
+            "toField": {
+              "##ID": 80,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 164,
+            "$$class": 31,
+            "fromFieldName": "stg_Start_Date",
+            "toField": {
+              "##ID": 82,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 165,
+            "$$class": 31,
+            "fromFieldName": "stg_End_Date",
+            "toField": {
+              "##ID": 84,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 166,
+            "$$class": 31,
+            "fromFieldName": "stg_Is_Current",
+            "toField": {
+              "##ID": 86,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 167,
+            "$$class": 31,
+            "fromFieldName": "stg_Is_Deleted",
+            "toField": {
+              "##ID": 88,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          }
+        ]
+      }
+    },
+    {
+      "$$ID": 8,
+      "$$class": 8,
+      "augmented": "false",
+      "createTime": "2026-11-01T01:12:40.503Z",
+      "name": "Lookup",
+      "advancedProperties": [
+        {
+          "$$ID": 91,
+          "$$class": 13,
+          "name": "Tracing Level",
+          "value": "Normal"
+        },
+        {
+          "$$ID": 92,
+          "$$class": 13,
+          "name": "Lookup Sql Override",
+          "value": ""
+        },
+        {
+          "$$ID": 93,
+          "$$class": 13,
+          "name": "Lookup Source Filter",
+          "value": ""
+        },
+        {
+          "$$ID": 94,
+          "$$class": 13,
+          "name": "Lookup caching enabled",
+          "value": "true"
+        },
+        {
+          "$$ID": 95,
+          "$$class": 13,
+          "name": "Lookup cache directory name",
+          "value": "$PMCacheDir"
+        },
+        {
+          "$$ID": 96,
+          "$$class": 13,
+          "name": "Lookup cache persistent",
+          "value": "false"
+        },
+        {
+          "$$ID": 97,
+          "$$class": 13,
+          "name": "Cache File Name Prefix",
+          "value": ""
+        },
+        {
+          "$$ID": 98,
+          "$$class": 13,
+          "name": "Re-cache from lookup source",
+          "value": "false"
+        },
+        {
+          "$$ID": 99,
+          "$$class": 13,
+          "name": "Lookup Data Cache Size",
+          "value": "AUTO"
+        },
+        {
+          "$$ID": 100,
+          "$$class": 13,
+          "name": "Lookup Index Cache Size",
+          "value": "AUTO"
+        },
+        {
+          "$$ID": 101,
+          "$$class": 13,
+          "name": "Dynamic Lookup Cache",
+          "value": "false"
+        },
+        {
+          "$$ID": 102,
+          "$$class": 13,
+          "name": "Update Dynamic Cache Condition",
+          "value": "TRUE"
+        },
+        {
+          "$$ID": 103,
+          "$$class": 13,
+          "name": "Output Old Value On Update",
+          "value": "false"
+        },
+        {
+          "$$ID": 104,
+          "$$class": 13,
+          "name": "Synchronize dynamic cache",
+          "value": "false"
+        },
+        {
+          "$$ID": 105,
+          "$$class": 13,
+          "name": "Insert Else Update",
+          "value": "false"
+        },
+        {
+          "$$ID": 106,
+          "$$class": 13,
+          "name": "Lookup source is static",
+          "value": "false"
+        },
+        {
+          "$$ID": 107,
+          "$$class": 13,
+          "name": "Pre-build lookup cache",
+          "value": "AUTO"
+        },
+        {
+          "$$ID": 108,
+          "$$class": 13,
+          "name": "Subsecond Precision",
+          "value": "6"
+        },
+        {
+          "$$ID": 109,
+          "$$class": 13,
+          "name": "Optional",
+          "value": "true"
+        }
+      ],
+      "groups": [
+        {
+          "$$ID": 7,
+          "$$class": 6,
+          "input": "true",
+          "name": "DefaultGroup",
+          "output": "true",
+          "conflictResolutions": [
+            {
+              "$$ID": 168,
+              "$$class": 32,
+              "precedingGroupName": "DefaultGroup",
+              "precedingTxName": "customers_staging_layer",
+              "rule": {
+                "$$ID": 188,
+                "$$class": 29,
+                "bulkRename": "true",
+                "include": "true",
+                "bulkRenameOption": {
+                  "$$ID": 284,
+                  "$$class": 38,
+                  "literal": "stg_",
+                  "pattern": "",
+                  "suffix": "false"
+                }
+              }
+            }
+          ],
+          "rules": [
+            {
+              "$$ID": 169,
+              "$$class": 29,
+              "bulkRename": "false",
+              "include": "true"
+            }
+          ]
+        }
+      ],
+      "sessionProperties": [
+        {
+          "$$ID": 110,
+          "$$class": 14,
+          "name": "Schema Name",
+          "value": ""
+        },
+        {
+          "$$ID": 111,
+          "$$class": 14,
+          "name": "Table Name",
+          "value": ""
+        }
+      ],
+      "advancedInputPortNames": "",
+      "associatedFields": "",
+      "lookupCondition": "",
+      "multipleMatchPolicy": "Use Any Value",
+      "returnPortName": "",
+      "unconnected": "false",
+      "useLabels": "false",
+      "fields": [
+        {
+          "$$ID": 113,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 114,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_SK",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+            "$$class": 18
+          },
+          "precision": 19,
+          "scale": 0
+        },
+        {
+          "$$ID": 115,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 116,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Stage_SK",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+            "$$class": 18
+          },
+          "precision": 19,
+          "scale": 0
+        },
+        {
+          "$$ID": 117,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 118,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_ID",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        },
+        {
+          "$$ID": 119,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 120,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "End_Date",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+            "$$class": 18
+          },
+          "precision": 29,
+          "scale": 9
+        },
+        {
+          "$$ID": 121,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 122,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Is_Current",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        },
+        {
+          "$$ID": 123,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 124,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Is_Deleted",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        }
+      ],
+      "inputPortNames": [],
+      "lookupConditions": [
+        {
+          "$$ID": 125,
+          "$$class": 20,
+          "leftOperand": "Stage_SK",
+          "operator": "=",
+          "rightOperand": "stg_Stage_SK"
+        }
+      ],
+      "dataAdapter": {
+        "$$ID": 112,
+        "$$class": 15,
+        "name": "",
+        "codePage": "",
+        "compatibleEngine": "",
+        "connectionId": "REDACTED_ENV_REFERENCE",
+        "connectionSelectionType": "",
+        "excludeDynamicFileNameField": "false",
+        "fwConfigId": "",
+        "multipleObject": "false",
+        "objectType": "SINGLE",
+        "typeSystem": "SqlServer",
+        "useDynamicFileName": "false",
+        "object": {
+          "$$ID": 170,
+          "$$class": 26,
+          "name": "Dim_Customers",
+          "customQuery": "",
+          "dbSchema": "",
+          "label": "Dim_Customers",
+          "objectName": "Dim_Customers",
+          "objectType": "",
+          "parentPath": "",
+          "path": "Dim_Customers",
+          "retainMetadata": "false",
+          "fields": [
+            {
+              "$$ID": 114,
+              "$$class": 17,
+              "name": "Customer_SK",
+              "annotations": [
+                {
+                  "$$ID": 285,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "true",
+              "label": "Customer_SK",
+              "nativeName": "Customer_SK",
+              "nativeType": "bigint",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 19,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "true",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 286,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 287,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 288,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 116,
+              "$$class": 17,
+              "name": "Stage_SK",
+              "annotations": [
+                {
+                  "$$ID": 289,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Stage_SK",
+              "nativeName": "Stage_SK",
+              "nativeType": "bigint",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 19,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "true",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 290,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 291,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 292,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 118,
+              "$$class": 17,
+              "name": "Customer_ID",
+              "annotations": [
+                {
+                  "$$ID": 293,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Customer_ID",
+              "nativeName": "Customer_ID",
+              "nativeType": "varchar",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 294,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 295,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 296,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 120,
+              "$$class": 17,
+              "name": "End_Date",
+              "annotations": [
+                {
+                  "$$ID": 297,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "End_Date",
+              "nativeName": "End_Date",
+              "nativeType": "timestamp",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 23,
+              "scale": 3,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 298,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 299,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 300,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 122,
+              "$$class": 17,
+              "name": "Is_Current",
+              "annotations": [
+                {
+                  "$$ID": 301,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Is_Current",
+              "nativeName": "Is_Current",
+              "nativeType": "integer",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 302,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 303,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 304,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 124,
+              "$$class": 17,
+              "name": "Is_Deleted",
+              "annotations": [
+                {
+                  "$$ID": 305,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Is_Deleted",
+              "nativeName": "Is_Deleted",
+              "nativeType": "integer",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 306,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 307,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 308,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        },
+        "oprRuntimeAttributes": {
+          "$$ID": 171,
+          "$$class": 27
+        },
+        "readOptions": {
+          "$$ID": 172,
+          "$$class": 28,
+          "commandType": 0,
+          "descending": "false",
+          "filterCondition": "",
+          "flatFileCommand": "",
+          "queryAll": "false",
+          "rowLimit": 0,
+          "selectDistinct": "false",
+          "userDefinedJoin": "",
+          "advancedFilterCondition": "",
+          "requestXml": "",
+          "sortFieldValues": ""
+        },
+        "runtimeAttributes": {
+          "$$ID": 173,
+          "$$class": 27
+        }
+      }
+    },
+    {
+      "$$ID": 11,
+      "$$class": 9,
+      "augmented": "false",
+      "createTime": "2026-11-01T01:15:01.515Z",
+      "name": "Expression",
+      "groups": [
+        {
+          "$$ID": 10,
+          "$$class": 6,
+          "input": "true",
+          "name": "DefaultGroup",
+          "output": "true",
+          "rules": [
+            {
+              "$$ID": 174,
+              "$$class": 29,
+              "bulkRename": "false",
+              "include": "true"
+            },
+            {
+              "$$ID": 175,
+              "$$class": 33,
+              "bulkRename": "false",
+              "include": "true",
+              "fieldNamesStr": "",
+              "names": [
+                {
+                  "$$ID": 189,
+                  "$$class": 36,
+                  "inputName": "Customer_SK",
+                  "outputName": "lkup_Customer_SK"
+                },
+                {
+                  "$$ID": 190,
+                  "$$class": 36,
+                  "inputName": "End_Date",
+                  "outputName": "lkup_End_Date"
+                },
+                {
+                  "$$ID": 191,
+                  "$$class": 36,
+                  "inputName": "Is_Current",
+                  "outputName": "lkup_Is_Current"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "additionalFields": "",
+      "windowConfigurationEnabled": "false",
+      "fields": [
+        {
+          "$$ID": 126,
+          "$$class": 21,
+          "defaultValue": "ERROR('transformation error')",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Record_Action",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0,
+          "expFieldType": "OUTPUT",
+          "expression": "IIF(ISNULL(lkup_Customer_SK),'Insert',IIF\n(lkup_Is_Current <> stg_Is_Current or\nlkup_End_Date <> stg_End_Date,'Update',\n'Skip')\n)",
+          "macroOutputPrefix": "",
+          "macroOutputSuffix": "",
+          "selectedMacroInput": "",
+          "userPrompt": "",
+          "variable": "false"
+        }
+      ],
+      "windowSpec": {
+        "$$ID": 127,
+        "$$class": 22,
+        "allRowsFollowing": "false",
+        "allRowsPreceding": "false",
+        "endOffset": 0,
+        "startOffset": 0,
+        "partitionKeys": []
+      }
+    },
+    {
+      "$$ID": 14,
+      "$$class": 10,
+      "augmented": "false",
+      "createTime": "2026-11-01T01:28:41.720Z",
+      "name": "Router",
+      "groups": [
+        {
+          "$$ID": 13,
+          "$$class": 6,
+          "input": "true",
+          "name": "INPUT",
+          "output": "false",
+          "rules": [
+            {
+              "$$ID": 176,
+              "$$class": 29,
+              "bulkRename": "false",
+              "include": "true"
+            }
+          ]
+        },
+        {
+          "$$ID": 128,
+          "$$class": 6,
+          "input": "false",
+          "name": "DEFAULT1",
+          "output": "true"
+        },
+        {
+          "$$ID": 16,
+          "$$class": 6,
+          "input": "false",
+          "name": "Insert",
+          "output": "true"
+        },
+        {
+          "$$ID": 20,
+          "$$class": 6,
+          "input": "false",
+          "name": "Update",
+          "output": "true"
+        }
+      ],
+      "groupFilterConditions": [
+        {
+          "$$ID": 129,
+          "$$class": 23,
+          "advancedFilterCondition": "",
+          "name": "Insert",
+          "simpleFilterConditions": [
+            {
+              "$$ID": 177,
+              "$$class": 34,
+              "fieldName": "Record_Action",
+              "filterValue": "'Insert'",
+              "operator": "="
+            }
+          ]
+        },
+        {
+          "$$ID": 130,
+          "$$class": 23,
+          "advancedFilterCondition": "",
+          "name": "Update",
+          "simpleFilterConditions": [
+            {
+              "$$ID": 178,
+              "$$class": 34,
+              "fieldName": "Record_Action",
+              "filterValue": "'Update'",
+              "operator": "="
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$$ID": 22,
+      "$$class": 11,
+      "augmented": "false",
+      "createTime": "2026-11-01T01:35:00.012Z",
+      "name": "Update_dim_customers",
+      "advancedProperties": [
+        {
+          "$$ID": 131,
+          "$$class": 13,
+          "name": "Forward Rejected Rows",
+          "value": "true"
+        },
+        {
+          "$$ID": 132,
+          "$$class": 13,
+          "name": "Pre SQL",
+          "value": ""
+        },
+        {
+          "$$ID": 133,
+          "$$class": 13,
+          "name": "Post SQL",
+          "value": ""
+        },
+        {
+          "$$ID": 134,
+          "$$class": 13,
+          "name": "Update Override",
+          "value": ""
+        },
+        {
+          "$$ID": 135,
+          "$$class": 13,
+          "name": "Additional Properties",
+          "value": ""
+        }
+      ],
+      "groups": [
+        {
+          "$$ID": 21,
+          "$$class": 6,
+          "input": "true",
+          "name": "DefaultGroup",
+          "output": "false",
+          "rules": [
+            {
+              "$$ID": 179,
+              "$$class": 29,
+              "bulkRename": "false",
+              "include": "true"
+            }
+          ]
+        }
+      ],
+      "sessionProperties": [
+        {
+          "$$ID": 136,
+          "$$class": 14,
+          "name": "Reject file directory",
+          "value": ""
+        },
+        {
+          "$$ID": 137,
+          "$$class": 14,
+          "name": "Reject filename",
+          "value": ""
+        },
+        {
+          "$$ID": 138,
+          "$$class": 14,
+          "name": "Schema Name",
+          "value": ""
+        },
+        {
+          "$$ID": 139,
+          "$$class": 14,
+          "name": "Table Name",
+          "value": ""
+        }
+      ],
+      "createTarget": "false",
+      "fieldMappingMode": "MANUAL",
+      "inputSorted": "false",
+      "schemaProviderType": "SELECTED_OBJECT",
+      "targetFieldsOrdered": "false",
+      "updateColumns": [],
+      "useLabels": "false",
+      "useSequenceFields": "false",
+      "fields": [
+        {
+          "$$ID": 141,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 142,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Customer_SK",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+            "$$class": 18
+          },
+          "precision": 19,
+          "scale": 0
+        },
+        {
+          "$$ID": 143,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 144,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "End_Date",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+            "$$class": 18
+          },
+          "precision": 29,
+          "scale": 9
+        },
+        {
+          "$$ID": 145,
+          "$$class": 16,
+          "adapterField": {
+            "##ID": 146,
+            "$$class": 17
+          },
+          "defaultValue": "",
+          "ignoreComparison": "false",
+          "ignoreNullInputs": "false",
+          "isDefaultValueUpdated": "false",
+          "name": "Is_Current",
+          "platformType": {
+            "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+            "$$class": 18
+          },
+          "precision": 10,
+          "scale": 0
+        }
+      ],
+      "dataAdapter": {
+        "$$ID": 140,
+        "$$class": 15,
+        "name": "",
+        "codePage": "",
+        "compatibleEngine": "",
+        "connectionId": "REDACTED_ENV_REFERENCE",
+        "connectionSelectionType": "",
+        "excludeDynamicFileNameField": "false",
+        "fwConfigId": "",
+        "multipleObject": "false",
+        "objectType": "SINGLE",
+        "typeSystem": "SqlServer",
+        "useDynamicFileName": "false",
+        "bulkOptions": {
+          "$$ID": 180,
+          "$$class": 35,
+          "hardDelete": "false",
+          "maxRowsPerRequest": 0,
+          "monitorBulk": "false",
+          "monitorBulkV2": "false",
+          "pkChunkingEnabled": "false",
+          "pkChunkingSize": 0,
+          "pkChunkingStartRowId": "",
+          "serialMode": "false",
+          "useBulkApi": "false",
+          "useBulkApiV2": "false"
+        },
+        "object": {
+          "$$ID": 181,
+          "$$class": 26,
+          "name": "Dim_Customers",
+          "customQuery": "",
+          "dbSchema": "",
+          "label": "Dim_Customers",
+          "objectName": "Dim_Customers",
+          "objectType": "",
+          "parentPath": "",
+          "path": "Dim_Customers",
+          "retainMetadata": "false",
+          "fields": [
+            {
+              "$$ID": 142,
+              "$$class": 17,
+              "name": "Customer_SK",
+              "annotations": [
+                {
+                  "$$ID": 309,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "true",
+              "label": "Customer_SK",
+              "nativeName": "Customer_SK",
+              "nativeType": "bigint",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 19,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "true",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 310,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 311,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 312,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 144,
+              "$$class": 17,
+              "name": "End_Date",
+              "annotations": [
+                {
+                  "$$ID": 313,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "End_Date",
+              "nativeName": "End_Date",
+              "nativeType": "timestamp",
+              "newField": "false",
+              "nullable": "true",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 23,
+              "scale": 3,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 314,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 315,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 316,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 146,
+              "$$class": 17,
+              "name": "Is_Current",
+              "annotations": [
+                {
+                  "$$ID": 317,
+                  "$$class": 4,
+                  "body": ""
+                }
+              ],
+              "createable": "false",
+              "externalId": "false",
+              "fieldStatus": "MODIFIED",
+              "fieldType": "CONNECTOR",
+              "filterable": "true",
+              "foreignKey": "false",
+              "generated": "false",
+              "javaType": "",
+              "key": "false",
+              "label": "Is_Current",
+              "nativeName": "Is_Current",
+              "nativeType": "integer",
+              "newField": "false",
+              "nullable": "false",
+              "original": "false",
+              "passthroughPort": "false",
+              "precision": 10,
+              "scale": 0,
+              "sfIdLookup": "false",
+              "unique": "false",
+              "updateable": "true",
+              "metaExtensions": [
+                {
+                  "$$ID": 318,
+                  "$$class": 37,
+                  "name": "defaultColValue",
+                  "value": ""
+                }
+              ],
+              "properties": [
+                {
+                  "$$ID": 319,
+                  "$$class": 37,
+                  "name": "parentObject",
+                  "value": "Dim_Customers"
+                },
+                {
+                  "$$ID": 320,
+                  "$$class": 37,
+                  "name": "parentObjectLabel",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        },
+        "oprRuntimeAttributes": {
+          "$$ID": 182,
+          "$$class": 27
+        },
+        "runtimeAttributes": {
+          "$$ID": 183,
+          "$$class": 27
+        },
+        "writeOptions": {
+          "$$ID": 184,
+          "$$class": 30,
+          "batchSize": 0,
+          "bulkApi": "false",
+          "errorFileDirectory": "",
+          "errorFilePrefix": "",
+          "handleDecimalRoundOff": "false",
+          "handleSpecialChars": "false",
+          "operations": [
+            "Update"
+          ],
+          "setFieldsToNull": "false",
+          "successFileDirectory": "",
+          "successFilePrefix": "",
+          "truncate": "false",
+          "updateStrategyExpression": "",
+          "useErrorFile": "false",
+          "useExactSrcNames": "false",
+          "useSuccessFile": "false"
+        }
+      },
+      "manualMappings": {
+        "$$ID": 147,
+        "$$class": 19,
+        "mappingList": [
+          {
+            "$$ID": 185,
+            "$$class": 31,
+            "fromFieldName": "lkup_Customer_SK",
+            "toField": {
+              "##ID": 141,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 186,
+            "$$class": 31,
+            "fromFieldName": "stg_End_Date",
+            "toField": {
+              "##ID": 143,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          },
+          {
+            "$$ID": 187,
+            "$$class": 31,
+            "fromFieldName": "stg_Is_Current",
+            "toField": {
+              "##ID": 145,
+              "$$class": 16
+            },
+            "fromFieldNames": []
+          }
+        ]
+      }
+    }
+  ]
+}
