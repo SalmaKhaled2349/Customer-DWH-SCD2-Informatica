@@ -310,6 +310,7 @@ SQL validation queries are available in [`sql/validation_queries.sql`](sql/valid
 
 ---
 
+
 ## Repository Structure
 
 ```text
@@ -323,21 +324,34 @@ Customer-DWH-SCD2-Informatica/
 │   │   ├── customers_landing_to_staging.jpg
 │   │   └── customers_staging_to_customersdim.jpg
 │   │
-│   └── mapping-specifications/
-│       └── asset-notes.md
+│   ├── mapping-specifications/
+│   │   └── asset-notes.md
+│   │
+│   └── asset-source/
+│       ├── mappings/
+│       ├── mapping-tasks/
+│       ├── taskflow/
+│       └── README.md
 │
 └── sql/
+    ├── create_tables.sql
     └── validation_queries.sql
 ```
 
-The mapping diagrams and specifications were prepared from my Informatica project export.
+### Informatica Asset Definitions
 
-The original Informatica export is kept separately because it contains environment-specific connection references. The diagrams and notes document the implementation but are not importable mapping assets.
+The repository includes sanitized definitions of the three mappings, three mapping tasks, and one taskflow used in this project.
+
+These files were extracted from my Informatica project export and preserve the transformation logic and configurations for technical review.
+
+The original export is kept separately because it contains environment-specific connection references. The published definitions are intended for documentation and are not a directly importable Informatica package.
+
+[Explore the Informatica Assets](informatica/asset-source/)
 
 ## Final Takeaway
 
 The most valuable part of this project for me was understanding **why each transformation was needed**, not just how to connect them in Informatica.
 
-The Hash Joiner helps identify differences in the incoming data, the Customer Lookup determines the appropriate historical action, and the final Dimension Lookup checks whether each existing version needs synchronization.
+The Hash Joiner helps identify differences in incoming customer data, the Customer Lookup determines the appropriate historical action, and the final Dimension Lookup checks whether each historical version needs to be inserted, updated, or skipped.
 
-Working through these mappings and debugging their results helped me better understand SCD Type 2, surrogate keys, incremental loading, and the difference between maintaining history and loading a Data Warehouse dimension.
+Working through these mappings and debugging their results helped me better understand SCD Type 2, surrogate keys, incremental loading, and the difference between maintaining history and synchronizing a Data Warehouse dimension.
