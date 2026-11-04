@@ -1,0 +1,138 @@
+{
+  "note": "View-only, safely extracted logic from the provided Informatica export. Not an importable Informatica file.",
+  "asset": "customers_staging_to_customersdim",
+  "transformation_order": [
+    {
+      "name": "customers_staging_layer"
+    },
+    {
+      "name": "Insert_dim_customers",
+      "target_field_mappings": [
+        {
+          "incoming": "stg_Stage_SK",
+          "target": "Stage_SK"
+        },
+        {
+          "incoming": "stg_Customer_ID",
+          "target": "Customer_ID"
+        },
+        {
+          "incoming": "stg_Customer_Name",
+          "target": "Customer_Name"
+        },
+        {
+          "incoming": "stg_City",
+          "target": "City"
+        },
+        {
+          "incoming": "stg_Country",
+          "target": "Country"
+        },
+        {
+          "incoming": "stg_Customer_Status",
+          "target": "Customer_Status"
+        },
+        {
+          "incoming": "stg_Hash_Key",
+          "target": "Hash_Key"
+        },
+        {
+          "incoming": "stg_Start_Date",
+          "target": "Start_Date"
+        },
+        {
+          "incoming": "stg_End_Date",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "stg_Is_Current",
+          "target": "Is_Current"
+        },
+        {
+          "incoming": "stg_Is_Deleted",
+          "target": "Is_Deleted"
+        }
+      ]
+    },
+    {
+      "name": "Lookup",
+      "lookupConditions": [
+        {
+          "left": "Stage_SK",
+          "operator": "=",
+          "right": "stg_Stage_SK"
+        }
+      ]
+    },
+    {
+      "name": "Expression",
+      "expressions": {
+        "Record_Action": "IIF(ISNULL(lkup_Customer_SK),'Insert',IIF\n(lkup_Is_Current <> stg_Is_Current or\nlkup_End_Date <> stg_End_Date,'Update',\n'Skip')\n)"
+      }
+    },
+    {
+      "name": "Router",
+      "router_groups": [
+        {
+          "group": "Insert",
+          "predicates": [
+            {
+              "field": "Record_Action",
+              "operator": "=",
+              "value": "'Insert'"
+            }
+          ]
+        },
+        {
+          "group": "Update",
+          "predicates": [
+            {
+              "field": "Record_Action",
+              "operator": "=",
+              "value": "'Update'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Update_dim_customers",
+      "target_field_mappings": [
+        {
+          "incoming": "lkup_Customer_SK",
+          "target": "Customer_SK"
+        },
+        {
+          "incoming": "stg_End_Date",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "stg_Is_Current",
+          "target": "Is_Current"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "from": "customers_staging_layer",
+      "to": "Lookup"
+    },
+    {
+      "from": "Lookup",
+      "to": "Expression"
+    },
+    {
+      "from": "Expression",
+      "to": "Router"
+    },
+    {
+      "from": "Router",
+      "to": "Insert_dim_customers"
+    },
+    {
+      "from": "Router",
+      "to": "Update_dim_customers"
+    }
+  ]
+}

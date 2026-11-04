@@ -1,0 +1,459 @@
+{
+  "note": "View-only, safely extracted logic from the provided Informatica export. Not an importable Informatica file.",
+  "asset": "customers_landing_to_staging",
+  "transformation_order": [
+    {
+      "name": "customers_landing_layer"
+    },
+    {
+      "name": "target_new",
+      "target_field_mappings": [
+        {
+          "incoming": "lnd_Customer_ID",
+          "target": "Customer_ID"
+        },
+        {
+          "incoming": "lnd_Customer_Name",
+          "target": "Customer_Name"
+        },
+        {
+          "incoming": "lnd_City",
+          "target": "City"
+        },
+        {
+          "incoming": "lnd_Country",
+          "target": "Country"
+        },
+        {
+          "incoming": "lnd_Customer_Status",
+          "target": "Customer_Status"
+        },
+        {
+          "incoming": "lnd_Hash_Key",
+          "target": "Hash_Key"
+        },
+        {
+          "incoming": "o_end_date",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "o_start_date",
+          "target": "Start_Date"
+        },
+        {
+          "incoming": "o_is_current",
+          "target": "Is_Current"
+        },
+        {
+          "incoming": "o_is_deleted",
+          "target": "Is_Deleted"
+        }
+      ]
+    },
+    {
+      "name": "customers_staging_layer"
+    },
+    {
+      "name": "Joiner",
+      "joinConditions": [
+        {
+          "left": "stg_Hash_Key",
+          "operator": "=",
+          "right": "lnd_Hash_Key"
+        }
+      ]
+    },
+    {
+      "name": "Filter_new_for_staging"
+    },
+    {
+      "name": "logic",
+      "expressions": {
+        "o_start_date": "SYSDATE",
+        "o_end_date": "Null",
+        "o_is_current": "1",
+        "o_is_deleted": "0",
+        "o_action": "IIF(isnull(lkup_Stage_SK),'New',\nIIF(lkup_Is_Deleted=1,\n'Reactive'\n,'Changed'))"
+      }
+    },
+    {
+      "name": "Router",
+      "router_groups": [
+        {
+          "group": "New",
+          "predicates": [
+            {
+              "field": "o_action",
+              "operator": "=",
+              "value": "'New'"
+            }
+          ]
+        },
+        {
+          "group": "Update",
+          "predicates": [
+            {
+              "field": "o_action",
+              "operator": "=",
+              "value": "'Changed'"
+            }
+          ]
+        },
+        {
+          "group": "Reactive",
+          "predicates": [
+            {
+              "field": "o_action",
+              "operator": "=",
+              "value": "Reactive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "target_update_close",
+      "target_field_mappings": [
+        {
+          "incoming": "close_date",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "iss_current",
+          "target": "Is_Current"
+        },
+        {
+          "incoming": "lkup_Stage_SK",
+          "target": "Stage_SK"
+        }
+      ]
+    },
+    {
+      "name": "close_old_record",
+      "expressions": {
+        "close_date": "sysdate",
+        "iss_current": "0"
+      }
+    },
+    {
+      "name": "target_update_insert",
+      "target_field_mappings": [
+        {
+          "incoming": "lnd_Customer_ID",
+          "target": "Customer_ID"
+        },
+        {
+          "incoming": "lnd_Customer_Name",
+          "target": "Customer_Name"
+        },
+        {
+          "incoming": "lnd_City",
+          "target": "City"
+        },
+        {
+          "incoming": "lnd_Country",
+          "target": "Country"
+        },
+        {
+          "incoming": "lnd_Customer_Status",
+          "target": "Customer_Status"
+        },
+        {
+          "incoming": "lnd_Hash_Key",
+          "target": "Hash_Key"
+        },
+        {
+          "incoming": "o_start_date",
+          "target": "Start_Date"
+        },
+        {
+          "incoming": "o_end_date",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "o_is_current",
+          "target": "Is_Current"
+        },
+        {
+          "incoming": "o_is_deleted",
+          "target": "Is_Deleted"
+        }
+      ]
+    },
+    {
+      "name": "customers_staging"
+    },
+    {
+      "name": "customers_landing"
+    },
+    {
+      "name": "Joiner1",
+      "joinConditions": [
+        {
+          "left": "lnd_Customer_ID",
+          "operator": "=",
+          "right": "stg_Customer_ID"
+        }
+      ]
+    },
+    {
+      "name": "Filter"
+    },
+    {
+      "name": "Expression",
+      "expressions": {
+        "close_is_del": "0",
+        "close_is_curr": "0",
+        "close_end_date": "SYSDATE",
+        "ins_is_del": "1",
+        "ins_is_curr": "1",
+        "ins_start": "sysdate",
+        "ins_end": "NULL"
+      }
+    },
+    {
+      "name": "close_old_deleted",
+      "target_field_mappings": [
+        {
+          "incoming": "close_is_del",
+          "target": "Is_Deleted"
+        },
+        {
+          "incoming": "close_is_curr",
+          "target": "Is_Current"
+        },
+        {
+          "incoming": "close_end_date",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "stg_Stage_SK",
+          "target": "Stage_SK"
+        }
+      ]
+    },
+    {
+      "name": "Lookup_new_or_changed",
+      "lookupConditions": [
+        {
+          "left": "Customer_ID",
+          "operator": "=",
+          "right": "lnd_Customer_ID"
+        }
+      ],
+      "filters": {
+        "Lookup Source Filter": "is_current=1"
+      }
+    },
+    {
+      "name": "close_reactive",
+      "expressions": {
+        "close_reac_is_del": "1",
+        "close_reac_is_curr": "0",
+        "close_reac_end": "SYSDATE"
+      }
+    },
+    {
+      "name": "insert_reactive",
+      "expressions": {
+        "insert_reac_is_del": "0",
+        "insert_reac_is_curr": "1",
+        "insert_reac_end": "Null",
+        "insert_reac_start": "SYSDate"
+      }
+    },
+    {
+      "name": "Target_reactive_close",
+      "target_field_mappings": [
+        {
+          "incoming": "close_reac_is_del",
+          "target": "Is_Deleted"
+        },
+        {
+          "incoming": "close_reac_is_curr",
+          "target": "Is_Current"
+        },
+        {
+          "incoming": "close_reac_end",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "lkup_Stage_SK",
+          "target": "Stage_SK"
+        }
+      ]
+    },
+    {
+      "name": "insert_deleted",
+      "target_field_mappings": [
+        {
+          "incoming": "stg_Hash_Key",
+          "target": "Hash_Key"
+        },
+        {
+          "incoming": "stg_Customer_Status",
+          "target": "Customer_Status"
+        },
+        {
+          "incoming": "stg_Country",
+          "target": "Country"
+        },
+        {
+          "incoming": "stg_City",
+          "target": "City"
+        },
+        {
+          "incoming": "stg_Customer_Name",
+          "target": "Customer_Name"
+        },
+        {
+          "incoming": "stg_Customer_ID",
+          "target": "Customer_ID"
+        },
+        {
+          "incoming": "ins_is_curr",
+          "target": "Is_Current"
+        },
+        {
+          "incoming": "ins_start",
+          "target": "Start_Date"
+        },
+        {
+          "incoming": "ins_end",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "ins_is_del",
+          "target": "Is_Deleted"
+        }
+      ]
+    },
+    {
+      "name": "Target_reactive_insert",
+      "target_field_mappings": [
+        {
+          "incoming": "lnd_Customer_ID",
+          "target": "Customer_ID"
+        },
+        {
+          "incoming": "lnd_Customer_Name",
+          "target": "Customer_Name"
+        },
+        {
+          "incoming": "lnd_City",
+          "target": "City"
+        },
+        {
+          "incoming": "lnd_Country",
+          "target": "Country"
+        },
+        {
+          "incoming": "lnd_Customer_Status",
+          "target": "Customer_Status"
+        },
+        {
+          "incoming": "lnd_Hash_Key",
+          "target": "Hash_Key"
+        },
+        {
+          "incoming": "insert_reac_end",
+          "target": "End_Date"
+        },
+        {
+          "incoming": "insert_reac_start",
+          "target": "Start_Date"
+        },
+        {
+          "incoming": "insert_reac_is_del",
+          "target": "Is_Deleted"
+        },
+        {
+          "incoming": "insert_reac_is_curr",
+          "target": "Is_Current"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "from": "customers_staging_layer",
+      "to": "Joiner"
+    },
+    {
+      "from": "customers_landing_layer",
+      "to": "Joiner"
+    },
+    {
+      "from": "Joiner",
+      "to": "Filter_new_for_staging"
+    },
+    {
+      "from": "logic",
+      "to": "Router"
+    },
+    {
+      "from": "Router",
+      "to": "target_new"
+    },
+    {
+      "from": "close_old_record",
+      "to": "target_update_close"
+    },
+    {
+      "from": "Router",
+      "to": "close_old_record"
+    },
+    {
+      "from": "Router",
+      "to": "target_update_insert"
+    },
+    {
+      "from": "customers_staging",
+      "to": "Joiner1"
+    },
+    {
+      "from": "customers_landing",
+      "to": "Joiner1"
+    },
+    {
+      "from": "Joiner1",
+      "to": "Filter"
+    },
+    {
+      "from": "Filter",
+      "to": "Expression"
+    },
+    {
+      "from": "Expression",
+      "to": "close_old_deleted"
+    },
+    {
+      "from": "Filter_new_for_staging",
+      "to": "Lookup_new_or_changed"
+    },
+    {
+      "from": "Lookup_new_or_changed",
+      "to": "logic"
+    },
+    {
+      "from": "Router",
+      "to": "close_reactive"
+    },
+    {
+      "from": "Router",
+      "to": "insert_reactive"
+    },
+    {
+      "from": "close_reactive",
+      "to": "Target_reactive_close"
+    },
+    {
+      "from": "Expression",
+      "to": "insert_deleted"
+    },
+    {
+      "from": "insert_reactive",
+      "to": "Target_reactive_insert"
+    }
+  ]
+}
